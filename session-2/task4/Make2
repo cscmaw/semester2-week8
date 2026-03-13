@@ -1,0 +1,30 @@
+
+CC = gcc
+CFLAGS = -Wall -Werror
+LIBS = -lm
+
+SRCDIR = src
+_SRC = student.c main.c
+INCDIR = include
+_INC = student.h structure.h
+OBJDIR = obj
+_OBJ = student.o main.o 
+EXEDIR = bin
+_EXE = student
+
+SRC = $(patsubst %,$(SRCDIR)/%,$(_SRC))
+INC = $(patsubst %,$(INCDIR)/%,$(_INC))
+OBJ = $(patsubst %,$(OBJDIR)/%,$(_OBJ))
+EXE = $(patsubst %,$(EXEDIR)/%,$(_EXE))
+
+$(EXE): $(OBJ)
+	$(CC) -o $@ $^ $(CFLAGS) $(LIBS)
+
+$(OBJ): $(SRC) $(INC)
+	$(CC) -c -o $@ $< $(CFLAGS)
+
+.PHONY: clean
+
+clean:
+	rm $(OBJ) $(EXE)
+

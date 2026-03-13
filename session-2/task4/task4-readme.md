@@ -31,7 +31,16 @@ Test the executable in the `bin/` folder.
 
 Test `make clean`.
 
-## Step 3 - extension
+## Step 3 - extension - a more generic Makefile
 
-We can include the same techniques from Task 2 to define variables and wildcards
-to produce a more generic Makefile. 
+The file `Make2` contains a more generic structure.
+
+We define all the files and folders at the top.
+
+We can test this Makefile using the `make -f` command which allows Makefile naming.
+
+`make -f Make2`
+
+You should verify that the code builds as before.
+
+`make -f Make2 clean` will tidy up.
