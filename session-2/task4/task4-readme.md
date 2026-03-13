@@ -33,9 +33,10 @@ Test `make clean`.
 
 ## Step 3 - extension - a more generic Makefile
 
-The file `Make2` contains a more generic structure.
-
-We define all the files and folders at the top.
+The file `Make2` contains a more generic Makefile structure
+- This avoids having to make multiple changes across the Makefile
+- Folder and file definition is provided at the top
+- Build commands are completely generic
 
 We can test this Makefile using the `make -f` command which allows Makefile naming.
 
